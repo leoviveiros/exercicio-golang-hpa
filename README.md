@@ -1,0 +1,1 @@
+# exercicio-golang-hpa
