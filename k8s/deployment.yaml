@@ -17,3 +17,9 @@ spec:
           image: leoviveiros/go-hpa:latest
           ports:
             - containerPort: 8000
+
+          resources:
+            requests:
+              cpu: 50m
+            limits:
+              cpu: 100m
