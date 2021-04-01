@@ -13,7 +13,7 @@ func TestCpuStresser(t *testing.T) {
 	end := time.Now()
 	elapsed := end.Sub(start)
 
-	// println("Elapsed time:", elapsed)
+	// println("Elapsed time:", elapsed.String())
 
 	if (elapsed < 100) {
 		t.Errorf("cpu not stressed, elapsed %d", elapsed)

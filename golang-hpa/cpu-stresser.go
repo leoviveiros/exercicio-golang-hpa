@@ -7,12 +7,12 @@ import (
 
 // O algorítmo do exemplo em PHP não estava estressando a CPU suficientemente, mesmo com um count maior
 func CpuStresser() {
-	const count = 20
+	const count = 23
 
 	builder := strings.Builder{}
 	sha := sha512.New()
 
-	builder.WriteString("aBcDeF")
+	builder.WriteString("aBcDeFgHiJkLMnOpQrStUvWxYz")
 
 	for i := 0; i < count; i++ {
 		sum := sha.Sum([]byte(builder.String()))
