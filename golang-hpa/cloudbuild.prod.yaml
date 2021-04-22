@@ -1,0 +1,15 @@
+steps:
+  - id: "rodando testes unitários"
+    name: "golang"
+    args: ["go", "test", "./golang-hpa", "-v"]
+
+  - id: "gerando o executavel"
+    name: "golang"
+    args: ["go", "build", "./golang-hpa", "-o", "./cpu-stresser"]
+
+  - id: "build na imagem"
+    name: "docker"
+    args: ["build", "--tag=gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA", "-f", "./golang-hpa/Dockerfile", "."]
+
+images:
+  - 'gcr.io/$PROJECT_ID/go-hpa'
