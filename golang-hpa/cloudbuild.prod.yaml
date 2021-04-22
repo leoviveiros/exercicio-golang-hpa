@@ -5,7 +5,7 @@ steps:
 
   - id: "gerando o executavel"
     name: "golang"
-    args: ["go", "build", "./golang-hpa", "-o", "./cpu-stresser"]
+    args: ["go", "build", "-o", "cpu-stresser", "./golang-hpa"]
 
   - id: "build na imagem"
     name: "docker"
