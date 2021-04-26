@@ -12,7 +12,7 @@ steps:
     args: ["build", "--tag=gcr.io/$PROJECT_ID/go-hpa:$SHORT_SHA", "-f", "./golang-hpa/Dockerfile", "."]
 
   - id: "ajustando arquivo de deployment"
-    name: "gcloud"
+    name: "kubectl"
     entrypoint: "/bin/sh"
     args:
       - "-c"
