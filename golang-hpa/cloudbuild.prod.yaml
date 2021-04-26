@@ -22,7 +22,14 @@ steps:
 
   - id: "deployment k8s"
     name: "gcr.io/cloud-builders/kubectl"
-    args: ["apply", "-f", "k8s/deployment.prod.yaml"]
+    args: 
+      - "apply"
+      - "-f" 
+      - "k8s/deployment.prod.yaml"
+      - "-f"
+      - "k8s/service.yaml"
+      - "-f"
+      - "k8s/hpa.yaml"
     env:
     - "CLOUDSDK_COMPUTE_ZONE=us-central1-a"
     - "CLOUDSDK_CONTAINER_CLUSTER=cluster-go-hpa"
